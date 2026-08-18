@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.zip
+*.crx
+*.pem
+*.key
+.env
+.env.*
+.DS_Store
+Thumbs.db
+recovery-plan.json
+suspended-record-*
+

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>标签组懒恢复</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img class="mark" src="icons/icon-128.png" alt="">
+        <div>
+          <h1>标签组懒恢复</h1>
+          <p>启动后只保留每个窗口的当前页</p>
+        </div>
+      </header>
+
+      <section id="migration" class="migration" hidden>
+        <strong>检测到旧版恢复页</strong>
+        <p id="migrationText"></p>
+        <small>请先打开这些标签页，确认原网址恢复后再整理。</small>
+      </section>
+
+      <section class="master-card">
+        <span><strong>Chrome 启动时自动整理</strong><small>扩展重新加载或升级时不会执行</small></span>
+        <label class="switch">
+          <input id="enabled" type="checkbox">
+          <span></span>
+        </label>
+      </section>
+
+      <section class="settings" aria-label="整理规则">
+        <label class="setting-row">
+          <span><strong>收起其他标签组</strong><small>当前页所在组保持展开</small></span>
+          <input id="collapseGroups" type="checkbox">
+        </label>
+        <label class="setting-row">
+          <span><strong>卸载后台标签页</strong><small>点击标签页时由 Chrome 重新加载</small></span>
+          <input id="discardInactiveTabs" type="checkbox">
+        </label>
+        <label class="setting-row nested">
+          <span><strong>包括未分组标签页</strong></span>
+          <input id="includeUngrouped" type="checkbox">
+        </label>
+        <label class="setting-row nested">
+          <span><strong>保护固定标签页</strong></span>
+          <input id="keepPinned" type="checkbox">
+        </label>
+        <label class="setting-row nested">
+          <span><strong>保护正在播放声音的页面</strong></span>
+          <input id="keepAudible" type="checkbox">
+        </label>
+      </section>
+
+      <button id="optimize" class="primary" type="button">立即整理当前窗口</button>
+      <p id="status" class="status" role="status">正在读取状态…</p>
+      <p class="note">扩展不会替换网址、移动标签或重建分组。</p>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

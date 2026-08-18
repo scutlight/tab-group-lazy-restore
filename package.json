@@ -1,0 +1,14 @@
+{
+  "name": "tab-group-lazy-restore",
+  "version": "4.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/run-all.mjs",
+    "check": "node --check extension/service-worker.js && node --check extension/popup.js && node --check extension/policy.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+
